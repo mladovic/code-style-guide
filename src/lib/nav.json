@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Getting Started",
+    "path": "/getting-started",
+    "children": [
+      {
+        "title": "Introduction",
+        "path": "/getting-started/introduction",
+        "content": "# Introduction\n\nthis works?\n"
+      }
+    ]
+  },
+  {
+    "title": "React",
+    "path": "/react",
+    "children": [
+      {
+        "title": "Code Style",
+        "path": "/react/code-style",
+        "content": "# Code Style\n"
+      },
+      {
+        "title": "Smt",
+        "path": "/react/smt",
+        "content": "# hahahahaha\n"
+      }
+    ]
+  },
+  {
+    "title": "Typescript",
+    "path": "/typescript",
+    "children": [
+      {
+        "title": "Best Practices",
+        "path": "/typescript/best-practices",
+        "content": "# TypeScript Best Practices\n\n## Use Strict Mode\n\nAlways enable `strict` mode in your `tsconfig.json` to catch potential errors early.\n\n```json\n{\n  \"compilerOptions\": {\n    \"strict\": true,\n    ...\n  }\n}\n```\n"
+      }
+    ]
+  }
+]

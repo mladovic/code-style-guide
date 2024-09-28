@@ -23,10 +23,10 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <Navigate to="/docs/getting-started/introduction" replace />
+                  <Navigate to="/getting-started/introduction" replace />
                 }
               />
-              <Route path="/docs/*" element={<MarkdownPage />} />
+              <Route path="/*" element={<MarkdownPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

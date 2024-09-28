@@ -8,6 +8,7 @@ import {
 import { NavItem } from "../lib/types";
 import { NavLink } from "react-router-dom";
 import { DarkModeToggle } from "./dark-mode";
+import { SearchBar } from "./SearchBar";
 
 interface SidebarProps {
   navItems: NavItem[];
@@ -22,7 +23,7 @@ export function Sidebar({ navItems }: SidebarProps) {
       >
         frontendguides.io
       </NavLink>
-      <div>Search</div>
+      <SearchBar />
       <DarkModeToggle />
       <ScrollArea className="h-[80vh]">
         <Accordion type="single" collapsible>
@@ -35,6 +36,7 @@ export function Sidebar({ navItems }: SidebarProps) {
                 <AccordionContent>
                   {item.children.map((child) => (
                     <div
+                      key={child.path}
                       className={`flex items-center justify-between p-2 rounded cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700`}
                     >
                       <NavLink
