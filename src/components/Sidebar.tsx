@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import generateNav, { NavItem } from "../lib/generateNav";
 
-function Sidebar() {
+export function Sidebar() {
   const navItems = generateNav();
 
   const renderNav = (items: NavItem[]): React.ReactNode => (
@@ -36,5 +36,3 @@ function Sidebar() {
     </nav>
   );
 }
-
-export default Sidebar;

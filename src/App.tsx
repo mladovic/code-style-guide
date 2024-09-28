@@ -3,11 +3,10 @@ import {
   Route,
   Routes,
   Navigate,
-  useParams,
 } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import MarkdownRenderer from "./components/MarkdownRenderer";
-import { useEffect, useState } from "react";
+import { Sidebar } from "./components/Sidebar";
+import { MarkdownPage } from "./components/MarkdownPage";
+import { NotFoundPage } from "./components/NotFoundPage";
 
 function App() {
   return (
@@ -26,40 +25,6 @@ function App() {
         </main>
       </div>
     </Router>
-  );
-}
-
-function MarkdownPage() {
-  const { "*": docName } = useParams();
-  const [content, setContent] = useState<string>("");
-
-  useEffect(() => {
-    const loadMarkdown = async () => {
-      try {
-        if (!docName) {
-          setContent("# Document Not Found\n\nNo document specified.");
-          return;
-        }
-        const path = `./docs/${docName}.md?raw`;
-        const module = await import(/* @vite-ignore */ path);
-        setContent(module.default);
-      } catch (error) {
-        setContent(`# Document Not Found\n\n${error}`);
-      }
-    };
-
-    loadMarkdown();
-  }, [docName]);
-
-  return <MarkdownRenderer content={content} />;
-}
-
-function NotFoundPage() {
-  return (
-    <div>
-      <h1>404 - Not Found</h1>
-      <p>The page you're looking for does not exist.</p>
-    </div>
   );
 }
 
