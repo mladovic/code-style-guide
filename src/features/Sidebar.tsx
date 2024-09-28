@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
-import generateNav, { NavItem } from "../lib/generateNav";
+import { NavItem } from "../lib/types";
 
-export function Sidebar() {
-  const navItems = generateNav();
+interface SidebarProps {
+  navItems: NavItem[];
+}
 
+export function Sidebar({ navItems }: SidebarProps) {
   const renderNav = (items: NavItem[]): React.ReactNode => (
     <ul className="pl-4">
       {items.map((item) => (
