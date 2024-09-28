@@ -5,10 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { Sidebar } from "./features/Sidebar";
 import { MarkdownPage } from "./features/MarkdownPage";
 import { NotFoundPage } from "./features/NotFoundPage";
-import { DarkModeToggle } from "./features/dark-mode";
+import { Sidebar } from "./features/Sidebar";
 import { useNav } from "./lib/useNav";
 
 function App() {
@@ -19,14 +18,13 @@ function App() {
       <div className="flex h-screen">
         <Sidebar navItems={navItems} />
         <div className="flex-1 flex flex-col">
-          <header className="p-4 bg-gray-200 dark:bg-gray-800 flex justify-end">
-            <DarkModeToggle />
-          </header>
           <main className="flex-1 p-8 overflow-auto">
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to="/docs/introduction" replace />}
+                element={
+                  <Navigate to="/docs/getting-started/introduction" replace />
+                }
               />
               <Route path="/docs/*" element={<MarkdownPage />} />
               <Route path="*" element={<NotFoundPage />} />
